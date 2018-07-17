@@ -27,7 +27,7 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <com.dlazaro66.qrcodereaderview.QRCodeReaderView
-            android:id="@+id/qrcode_reader_view"
+            android:id="@+id/activity_qr_read_reader"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
