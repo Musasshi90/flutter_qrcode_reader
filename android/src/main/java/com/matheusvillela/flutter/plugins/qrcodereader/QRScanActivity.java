@@ -21,19 +21,16 @@
 package com.matheusvillela.flutter.plugins.qrcodereader;
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.content.Intent;
 import android.graphics.PointF;
 import android.os.Bundle;
 
 import com.dlazaro66.qrcodereaderview.QRCodeReaderView;
 
-public class QRScanActivity extends AppCompatActivity implements QRCodeReaderView.OnQRCodeReadListener {
+public class QRScanActivity extends Activity implements QRCodeReaderView.OnQRCodeReadListener {
 
     private boolean qrRead;
     private QRCodeReaderView view;
-    private Toolbar toolbar;
 
     public static String EXTRA_RESULT = "extra_result";
 
@@ -44,12 +41,6 @@ public class QRScanActivity extends AppCompatActivity implements QRCodeReaderVie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr_read);
-
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-
-        toolbar.setTitle("QR Scan");
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         view = (QRCodeReaderView) findViewById(R.id.activity_qr_read_reader);
         Intent intent = getIntent();
