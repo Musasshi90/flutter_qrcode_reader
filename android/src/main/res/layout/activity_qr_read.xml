@@ -9,9 +9,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <View
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="205dp"
+        android:layout_height="205dp"
         android:layout_centerInParent="true"
-        android:background="@drawable/scan_frame" />
+        android:background="@drawable/scan_frame">
+
+        <ImageView
+            android:id="@+id/image_view_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_line" />
+    </RelativeLayout>
+
 </RelativeLayout>
