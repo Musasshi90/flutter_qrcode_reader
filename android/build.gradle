@@ -3,9 +3,8 @@ version '1.0-SNAPSHOT'
 
 buildscript {
     repositories {
-        jcenter()
-        maven { url "https://jitpack.io" }
         google()
+        jcenter()
     }
 
     dependencies {
@@ -15,13 +14,8 @@ buildscript {
 
 rootProject.allprojects {
     repositories {
+        google()
         jcenter()
-        maven {
-            url "https://jitpack.io"
-        }
-        maven {
-            url "https://maven.google.com"
-        }
     }
 }
 
@@ -29,23 +23,16 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion '27.0.3'
 
     defaultConfig {
+        minSdkVersion 16
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     lintOptions {
         disable 'InvalidPackage'
     }
 }
-
 dependencies {
-    implementation('com.dlazaro66.qrcodereaderview:qrcodereaderview:2.0.3@aar') {
-        transitive = true
-    }
-//    provided files('tmplibs/flutter.jar')
-}
-
-repositories {
-    google()
+    implementation 'com.dlazaro66.qrcodereaderview:qrcodereaderview:2.0.3'
+//    provided files('tmpLibs/flutter.jar')
 }
